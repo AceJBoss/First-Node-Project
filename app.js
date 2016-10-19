@@ -25,13 +25,12 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // api routes
-let sellerApi = require('./routes/seller');
-let buyerApi = require('./routes/buyer');
+let adminApi = require('./routes/admin');
 
-app.use('/api/v1', sellerApi,buyerApi);
+app.use('/api/v1', adminApi);
 
 // set port
-const port = process.env.PORT || 4000;
+const port = process.env.PORT || 9005;
 
 app.listen(port, function(){
     console.log(`Server started on port ${port}...`);
